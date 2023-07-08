@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SpotMelody</string>
+    <string name="spotmelody">SpotMelody</string>
+    <string name="search">Buscar</string>
+    <string name="image">ImageMusica</string>
+    <string name="imageaction">ImageAction</string>
+</resources>
