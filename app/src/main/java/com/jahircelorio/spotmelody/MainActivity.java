@@ -35,8 +35,9 @@ import cafsoft.foundation.URLSession;
 public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer = null;
+    private Result currentSong = null;
 
-    private EditText txtSearch= null;
+    private EditText txtSearch = null;
     private Button btnSearch = null;
 
     private ListView listViewItems = null;
@@ -44,57 +45,55 @@ public class MainActivity extends AppCompatActivity {
 
     private AppleMusicService service = null;
     int REQUEST_CODE = 200;
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         verificarPermisos();
-
 
         initViews();
         initEvents();
 
         service = new AppleMusicService();
 
+        // Mostrar la lista predeterminada al iniciar la aplicación
+        getMusicInfo("Shakira");
+        txtSearch.setText("Shakira");
 
     }
 
-    //Metodo para pedir permisos al usuario
+    // Método para pedir permisos al usuario
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private void verificarPermisos(){
+    private void verificarPermisos() {
         int permisoAlmacenamiento = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-         if ( permisoAlmacenamiento == PackageManager.PERMISSION_GRANTED){
-             Toast.makeText(this, "Permiso Almacenamiento ", Toast.LENGTH_SHORT).show();
-         } else{
-             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},REQUEST_CODE);
-         }
+        if (permisoAlmacenamiento != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE);
+        }
     }
 
-    //Inicializar los elementos de la view
-    public  void initViews(){
+    // Inicializar los elementos de la vista
+    public void initViews() {
         txtSearch = findViewById(R.id.txtSearch);
         listViewItems = findViewById(R.id.listViewItems);
     }
 
-    //Metodo para hacer la busqueda
-    public void btnGetInfoOnClick(View view){
+    // Método para hacer la búsqueda
+    public void btnGetInfoOnClick(View view) {
         getMusicInfo(txtSearch.getText().toString());
     }
 
-
-    public void initEvents(){
+    public void initEvents() {
         listViewItems.setOnItemClickListener((adapterView, view, i, l) -> {
-
-            CustomListAdapter.ViewHolder viewHolder = new CustomListAdapter.ViewHolder(view);
+            CustomListAdapter.ViewHolder viewHolder = (CustomListAdapter.ViewHolder) view.getTag();
             Result song = (Result) listViewItems.getAdapter().getItem(i);
 
-            String destFilename = this.getCacheDir() + "/" + song.getTrackId() + ".tmp.m4a";
+            String destFilename = getCacheDir() + "/" + song.getTrackId() + ".tmp.m4a";
             int state = song.getState();
-            switch (state){
+            switch (state) {
                 case 1:
-                    try{
+                    try {
                         downloadFile(new URL(song.getPreviewUrl()), destFilename);
                         song.setState(2);
                         viewHolder.imgAction.setImageResource(R.drawable.play);
@@ -103,10 +102,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                     break;
                 case 2:
-                    mediaPlayer = MediaPlayer.create(this, Uri.parse(destFilename));
-                    mediaPlayer.start();
-                    song.setState(3);
-                    viewHolder.imgAction.setImageResource(R.drawable.pause);
+                    if (currentSong != null && currentSong.getState() == 3) {
+                        mediaPlayer.pause();
+                        currentSong.setState(2);
+                        viewHolder.imgAction.setImageResource(R.drawable.play);
+                    } else {
+                        mediaPlayer = MediaPlayer.create(this, Uri.parse(destFilename));
+                        mediaPlayer.start();
+                        song.setState(3);
+                        viewHolder.imgAction.setImageResource(R.drawable.pause);
+                    }
                     break;
                 case 3:
                     mediaPlayer.stop();
@@ -114,20 +119,18 @@ public class MainActivity extends AppCompatActivity {
                     viewHolder.imgAction.setImageResource(R.drawable.play);
                     break;
             }
+
+            currentSong = song;
         });
-        mediaPlayer = new MediaPlayer();
     }
 
-    //Se obtiene la lista de canciones con respecto a la busqueda y se la lista.
+    // Obtener la lista de canciones con respecto a la búsqueda y mostrarla en la lista.
     public void getMusicInfo(String name) {
         results = new ArrayList<>();
-        service.searchSongsByTerm(name,(isNetworkError, statusCode, root) -> {
+        service.searchSongsByTerm(name, (isNetworkError, statusCode, root) -> {
             if (!isNetworkError) {
                 if (statusCode == 200) {
-
-                    for (Result e:  root.getResults()){
-                        results.add(new Result(e.getTrackId(),e.getArtistName(),e.getTrackName(), e.getPreviewUrl(), e.getArtworkUrl100()));
-                    }
+                    results.addAll(root.getResults());
                     runOnUiThread(() -> {
                         CustomListAdapter adapter = new CustomListAdapter(this, results);
                         listViewItems.setAdapter(adapter);
@@ -141,27 +144,43 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-    //Descarga la canción que viene en una URL y le pone el nombre destFilename
-    public void downloadFile(URL audioURL, String destFilename){
+    // Descarga la canción que viene en una URL y le pone el nombre destFilename
+    public void downloadFile(URL audioURL, String destFilename) {
         URLSession.getShared().downloadTask(audioURL, (localAudioUrl, response, error) -> {
-
             if (error == null) {
                 int respCode = ((HTTPURLResponse) response).getStatusCode();
 
                 if (respCode == 200) {
                     File file = new File(localAudioUrl.getFile());
                     if (file.renameTo(new File(destFilename))) {
-                        mediaPlayer = MediaPlayer.create(this, Uri.parse(destFilename));
-                        //mediaPlayer.start();
+                        if (currentSong != null && currentSong.getState() == 2) {
+                            mediaPlayer.release();
+                            currentSong.setState(1);
+                        }
                     }
-                }
-                else{
+                } else {
                     // Error (respCode)
                 }
-            }else {
+            } else {
                 // Connection error
             }
         }).resume();
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (currentSong != null && currentSong.getState() == 3) {
+            mediaPlayer.pause();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+        }
+    }
 }
+
