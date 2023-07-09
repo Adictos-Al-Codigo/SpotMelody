@@ -1,17 +1,21 @@
 package com.jahircelorio.spotmelody;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.jahircelorio.spotmelody.Service.model.Result;
 
 import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.util.List;
@@ -21,6 +25,7 @@ public class CustomListAdapter extends BaseAdapter {
 
     private Context context = null;
     private List<Result> results = null;
+
 
     public CustomListAdapter(Context newContext, List<Result> newResults){
         context = newContext;
@@ -41,6 +46,8 @@ public class CustomListAdapter extends BaseAdapter {
     public long getItemId(int i) {
         return i;
     }
+
+    public String url_album;
 
     @Override
     public View getView(int pos, View convertView, ViewGroup parent) {
@@ -63,6 +70,8 @@ public class CustomListAdapter extends BaseAdapter {
         try {
             viewHolder.txtTrackName.setText(result.getTrackName());
             viewHolder.txtArtistName.setText(result.getArtistName());
+            url_album = result.getTrackViewUrl();
+
             Picasso.get().load(result.getArtworkUrl100()).error(R.drawable.musica).into(viewHolder.imgPhoto);
             String destFilename = context.getCacheDir() + "/" + result.getTrackId() + ".m4a";
             if (new File(destFilename).exists()) {
@@ -86,12 +95,18 @@ public class CustomListAdapter extends BaseAdapter {
         TextView txtArtistName = null;
         ImageView imgAction = null;
 
+        ImageView trackViewUrl = null;
+
         public ViewHolder(View view){
             imgPhoto = view.findViewById(R.id.imgPhoto);
             txtTrackName = view.findViewById(R.id.txtTrackName);
             txtArtistName = view.findViewById(R.id.txtArtistName);
             imgAction = view.findViewById(R.id.imgAction);
+            trackViewUrl = view.findViewById(R.id.mostrar_album);
+            //trackViewUrl.setText("Mostrar Albúm");
+
         }
+
 
     }
 

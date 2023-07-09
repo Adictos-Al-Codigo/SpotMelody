@@ -41,6 +41,7 @@
             android:text="TextView"
             android:textSize="12sp"
             android:textStyle="bold" />
+
     </LinearLayout>
 
     <ImageView
@@ -54,4 +55,13 @@
         android:contentDescription="@string/imageaction"
         app:srcCompat="@drawable/descarga"
         tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/mostrar_album"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:onClick="mostrarAlbumOnClick"
+        android:src="@drawable/album"
+        android:translationY="8dp" />
+
 </LinearLayout>

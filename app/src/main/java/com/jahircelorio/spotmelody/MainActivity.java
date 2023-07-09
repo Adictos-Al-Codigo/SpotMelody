@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -44,6 +45,18 @@ public class MainActivity extends AppCompatActivity {
     private List<Result> results = null;
 
     private AppleMusicService service = null;
+
+    public String url_mostrar_album;
+
+    public Button getMostrar_album() {
+        return mostrar_album;
+    }
+
+    public void setMostrar_album(Button mostrar_album) {
+        this.mostrar_album = mostrar_album;
+    }
+
+    private  Button mostrar_album = null;
     int REQUEST_CODE = 200;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -58,9 +71,12 @@ public class MainActivity extends AppCompatActivity {
 
         service = new AppleMusicService();
 
+
         // Mostrar la lista predeterminada al iniciar la aplicación
         getMusicInfo("Shakira");
         txtSearch.setText("Shakira");
+
+
 
     }
 
@@ -82,6 +98,16 @@ public class MainActivity extends AppCompatActivity {
     // Método para hacer la búsqueda
     public void btnGetInfoOnClick(View view) {
         getMusicInfo(txtSearch.getText().toString());
+    }
+
+
+    // Método para el botón "mostrar_album"
+    public void mostrarAlbumOnClick(View view) {
+        String url = results.get(0).getTrackViewUrl(); // Aquí debes reemplazar con la URL deseada
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
 
     public void initEvents() {

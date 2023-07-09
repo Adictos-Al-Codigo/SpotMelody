@@ -8,14 +8,18 @@ public class Result {
     private String trackName;
     private String previewUrl;
     private String artworkUrl100;
+
+
+    private String trackViewUrl;
     private  int state;
 
-    public Result(int newtrackId , String newArtistName, String newTrackName, String newPreviewUrl, String newArtworkUrl100){
+    public Result(int newtrackId , String newArtistName, String newTrackName, String newPreviewUrl, String newArtworkUrl100, String newtrackViewUrl){
         trackId = newtrackId;
         artistName = newArtistName;
         trackName = newTrackName;
         previewUrl = newPreviewUrl;
         artworkUrl100 = newArtworkUrl100;
+        trackViewUrl = newtrackViewUrl;
     }
 
     public int getTrackId() {
@@ -65,5 +69,13 @@ public class Result {
 
     public void setState(int state) {
         this.state = state;
+    }
+
+    public String getTrackViewUrl() {
+        return trackViewUrl;
+    }
+
+    public void setTrackViewUrl(String trackViewUrl) {
+        this.trackViewUrl = trackViewUrl;
     }
 }
