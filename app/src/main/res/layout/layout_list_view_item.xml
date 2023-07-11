@@ -35,12 +35,22 @@
         <TextView
             android:id="@+id/txtArtistName"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="49dp"
             android:layout_weight="1"
             android:fontFamily="casual"
             android:text="TextView"
             android:textSize="12sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/genero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="TextView"
+            android:textColor="#0037FF"
+            android:textStyle="bold"
+            android:translationY="-20dp" />
 
     </LinearLayout>
 

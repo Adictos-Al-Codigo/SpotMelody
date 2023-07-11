@@ -9,17 +9,27 @@ public class Result {
     private String previewUrl;
     private String artworkUrl100;
 
+    public String getPrimaryGenreName() {
+        return primaryGenreName;
+    }
+
+    public void setPrimaryGenreName(String primaryGenreName) {
+        this.primaryGenreName = primaryGenreName;
+    }
 
     private String trackViewUrl;
     private  int state;
 
-    public Result(int newtrackId , String newArtistName, String newTrackName, String newPreviewUrl, String newArtworkUrl100, String newtrackViewUrl){
+    private String primaryGenreName;
+
+    public Result(int newtrackId , String newArtistName, String newTrackName, String newPreviewUrl, String newArtworkUrl100, String newtrackViewUrl, String newprimaryGenreName){
         trackId = newtrackId;
         artistName = newArtistName;
         trackName = newTrackName;
         previewUrl = newPreviewUrl;
         artworkUrl100 = newArtworkUrl100;
         trackViewUrl = newtrackViewUrl;
+        primaryGenreName = newprimaryGenreName;
     }
 
     public int getTrackId() {
