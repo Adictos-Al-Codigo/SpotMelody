@@ -1,8 +1,12 @@
 package com.jahircelorio.spotmelody;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
 import android.content.Intent;
@@ -12,13 +16,15 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
-
+import com.google.android.material.navigation.NavigationView;
 import com.jahircelorio.spotmelody.Service.model.AppleMusicService;
 import com.jahircelorio.spotmelody.Service.model.Result;
 
@@ -48,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
     public String url_mostrar_album;
 
+    DrawerLayout drawerLayout = null;
+    NavigationView navigationView = null;
+    ActionBarDrawerToggle actionBarDrawerToggle = null;
+
     public Button getMostrar_album() {
         return mostrar_album;
     }
@@ -58,6 +68,17 @@ public class MainActivity extends AppCompatActivity {
 
     private  Button mostrar_album = null;
     int REQUEST_CODE = 200;
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        } else if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -76,8 +97,53 @@ public class MainActivity extends AppCompatActivity {
         getMusicInfo("Shakira");
         txtSearch.setText("Shakira");
 
+        Toolbar toolbar = findViewById(R.id.toolbar); // Agrega esta línea para inicializar la variable Toolbar
+        toolbar.setTitle("Principal");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Agrega esta línea para mostrar el botón de inicio en la barra de acción
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_home_24); // Reemplaza "ic_menu" con el ícono de tu elección para el botón de inicio
 
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getTitle().toString()){
+                    case "Principal" : {
+                        Toast.makeText(MainActivity.this,"Principal",Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    case  "Buscar" : {
+                        Toast.makeText(MainActivity.this, "Buscar", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    case  "Artistas" : {
+                        Toast.makeText(MainActivity.this, "Artita Recomendados",Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    case  "Lista de Reproducción" : {
+                        Toast.makeText(MainActivity.this,"Lista de Reproducción",Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+
+                    case "Ver Cuenta" :{
+                        Toast.makeText(MainActivity.this,"Ver Cuenta",Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    case "Cerrar Sesión" : {
+                        Toast.makeText(MainActivity.this,"Cerraste Sesión",Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+                return true;
+            }
+        });
     }
 
     // Método para pedir permisos al usuario
@@ -206,6 +272,16 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         if (mediaPlayer != null) {
             mediaPlayer.release();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else{
+            super.onBackPressed();
         }
     }
 }

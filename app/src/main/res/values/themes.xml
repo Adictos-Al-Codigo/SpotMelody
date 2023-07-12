@@ -12,5 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item> <!-- Agrega esta línea para desactivar la ActionBar -->
+        <item name="windowNoTitle">true</item> <!-- Agrega esta línea para ocultar el título de la aplicación -->
     </style>
 </resources>

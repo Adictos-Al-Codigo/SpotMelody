@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">SpotMelody</string>
+    <string name="app_name">Spot - Melody</string>
     <string name="spotmelody">SpotMelody</string>
     <string name="search">Buscar</string>
     <string name="image">ImageMusica</string>
     <string name="imageaction">ImageAction</string>
+    <string name="open">Open Navigation Drawer</string>
+    <string name="close">Close Navigation Drawer</string>
 </resources>
