@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="75dp">
+    android:layout_height="100dp"
+    android:layout_marginTop="50dp">
 
     <ImageView
         android:id="@+id/imgPhoto"
@@ -25,10 +26,10 @@
         <TextView
             android:id="@+id/txtTrackName"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#FF0000"
             android:text="TextView"
+            android:textColor="#FF0000"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -37,10 +38,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#6A00FF"
             android:text="TextView"
+            android:textColor="#6A00FF"
             android:textSize="15dp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/popularidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="#FF00FB"
+            android:textSize="16dp"/>
 
         <TextView
             android:id="@+id/genero"
@@ -49,6 +59,7 @@
             android:layout_weight="0"
             android:text="TextView"
             android:textColor="#0037FF"
+            android:textSize="16dp"
             android:textStyle="bold"
             android:translationY="-5dp" />
 
@@ -73,6 +84,6 @@
         android:onClick="mostrarAlbumOnClick"
         android:src="@drawable/album"
         android:translationX="-10dp"
-        android:translationY="15dp" />
+        android:translationY="30dp" />
 
 </LinearLayout>

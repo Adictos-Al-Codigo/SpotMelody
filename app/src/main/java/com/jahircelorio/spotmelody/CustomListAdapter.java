@@ -71,7 +71,8 @@ public class CustomListAdapter extends BaseAdapter {
             viewHolder.txtTrackName.setText(result.getTrackName());
             viewHolder.txtArtistName.setText(result.getArtistName());
             url_album = result.getTrackViewUrl();
-            viewHolder.primaryGenreName.setText(result.getPrimaryGenreName());
+            viewHolder.primaryGenreName.setText("Genero: " + result.getPrimaryGenreName());
+            viewHolder.collectionPrice.setText("Popularidad: " + result.getCollectionPrice());
             Picasso.get().load(result.getArtworkUrl100()).error(R.drawable.musica).into(viewHolder.imgPhoto);
             String destFilename = context.getCacheDir() + "/" + result.getTrackId() + ".m4a";
             if (new File(destFilename).exists()) {
@@ -99,6 +100,8 @@ public class CustomListAdapter extends BaseAdapter {
 
         TextView primaryGenreName = null;
 
+        TextView collectionPrice = null;
+
         public ViewHolder(View view){
             imgPhoto = view.findViewById(R.id.imgPhoto);
             txtTrackName = view.findViewById(R.id.txtTrackName);
@@ -106,6 +109,7 @@ public class CustomListAdapter extends BaseAdapter {
             imgAction = view.findViewById(R.id.imgAction);
             trackViewUrl = view.findViewById(R.id.mostrar_album);
             primaryGenreName = view.findViewById(R.id.genero);
+            collectionPrice = view.findViewById(R.id.popularidad);
         }
 
 

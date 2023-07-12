@@ -22,7 +22,17 @@ public class Result {
 
     private String primaryGenreName;
 
-    public Result(int newtrackId , String newArtistName, String newTrackName, String newPreviewUrl, String newArtworkUrl100, String newtrackViewUrl, String newprimaryGenreName){
+    public String getCollectionPrice() {
+        return collectionPrice;
+    }
+
+    public void setCollectionPrice(String collectionPrice) {
+        this.collectionPrice = collectionPrice;
+    }
+
+    private String collectionPrice;
+
+    public Result(int newtrackId , String newArtistName, String newTrackName, String newPreviewUrl, String newArtworkUrl100, String newtrackViewUrl, String newprimaryGenreName, String newcollectionPrice){
         trackId = newtrackId;
         artistName = newArtistName;
         trackName = newTrackName;
@@ -30,6 +40,7 @@ public class Result {
         artworkUrl100 = newArtworkUrl100;
         trackViewUrl = newtrackViewUrl;
         primaryGenreName = newprimaryGenreName;
+        collectionPrice = newcollectionPrice;
     }
 
     public int getTrackId() {
