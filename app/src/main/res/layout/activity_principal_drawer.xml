@@ -23,6 +23,40 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:text="Acerca de"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:translationX="170dp"
+            android:translationY="10dp"
+            />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&quot;SpotMelody&quot; es una aplicación móvil diseñada para puedan explorar musicales personalizadas utilizando la plataforma de streaming de música de Spotify. Esta aplicación les permitirá descubrir nuevas canciones, explorar diferentes géneros musicales y compartir sus creaciones con sus compañeros."
+            android:textSize="20dp"
+            android:translationY="10dp"
+            android:translationX="10dp"
+            />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generos Disponibles"
+            android:textSize="20dp"
+            android:translationX="120dp"
+            android:translationY="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            />
+
 
 
     </LinearLayout>
@@ -33,7 +67,10 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/header"
-        app:menu="@menu/main_menu" />
+        app:menu="@menu/main_menu" >
+
+    </com.google.android.material.navigation.NavigationView>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
 
