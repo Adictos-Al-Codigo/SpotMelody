@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         txtSearch.setText("Shakira");
 
         Toolbar toolbar = findViewById(R.id.toolbar); // Agrega esta línea para inicializar la variable Toolbar
-        toolbar.setTitle("Principal");
+        toolbar.setTitle("Buscar");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Agrega esta línea para mostrar el botón de inicio en la barra de acción
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_home_24); // Reemplaza "ic_menu" con el ícono de tu elección para el botón de inicio
@@ -116,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getTitle().toString()){
                     case "Principal" : {
-                        Toast.makeText(MainActivity.this,"Principal",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, PrincipalActivity.class);
+                        startActivity(intent);
                         break;
                     }
                     case  "Buscar" : {
@@ -284,5 +285,7 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
+
 }
 
