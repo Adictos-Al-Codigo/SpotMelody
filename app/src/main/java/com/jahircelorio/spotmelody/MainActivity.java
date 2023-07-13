@@ -121,11 +121,13 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case  "Buscar" : {
-                        Toast.makeText(MainActivity.this, "Buscar", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent);
                         break;
                     }
                     case  "Artistas" : {
-                        Toast.makeText(MainActivity.this, "Artita Recomendados",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, artistasRecomendados.class);
+                        startActivity(intent);
                         break;
                     }
                     case  "Lista de Reproducción" : {

@@ -14,14 +14,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class PrincipalActivity extends AppCompatActivity {
-
+public class artistasRecomendados extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
-
     NavigationView navigationView;
-
     ActionBarDrawerToggle actionBarDrawerToggle;
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
@@ -34,63 +32,56 @@ public class PrincipalActivity extends AppCompatActivity {
     }
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_principal_drawer);
+        setContentView(R.layout.artista_recomendado_drawer);
 
         // Configurar el NavigationView
-        navigationView = findViewById(R.id.nav_viewP);
+        navigationView = findViewById(R.id.nav_viewAR);
 
-        toolbar = findViewById(R.id.toolbarP); // Agrega esta línea para inicializar la variable Toolbar
-        toolbar.setTitle("Principal");
+        toolbar = findViewById(R.id.toolbarAR); // Agrega esta línea para inicializar la variable Toolbar
+        toolbar.setTitle("Artista Recomendados");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Agrega esta línea para mostrar el botón de inicio en la barra de acción
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_home_24); // Reemplaza "ic_menu" con el ícono de tu elección para el botón de inicio
 
-        drawerLayout = findViewById(R.id.drawer_layoutP);
-        navigationView = findViewById(R.id.nav_viewP);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(PrincipalActivity.this, drawerLayout, R.string.open, R.string.close);
+        drawerLayout = findViewById(R.id.drawer_layoutAR);
+        navigationView = findViewById(R.id.nav_viewAR);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(artistasRecomendados.this, drawerLayout, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getTitle().toString()){
                     case "Principal" : {    // Verificar si ya estás en PrincipalActivity
-                        if (!(PrincipalActivity.this instanceof PrincipalActivity)) {
-                            // Finalizar la actividad actual
-                            finish();
-
                             // Iniciar PrincipalActivity
-                            Intent intent = new Intent(PrincipalActivity.this, PrincipalActivity.class);
+                            Intent intent = new Intent(artistasRecomendados.this, PrincipalActivity.class);
                             startActivity(intent);
-                        }
                         break;
                     }
                     case  "Buscar" : {
-                        Intent intent = new Intent(PrincipalActivity.this,MainActivity.class);
+                        Intent intent = new Intent(artistasRecomendados.this,MainActivity.class);
                         startActivity(intent);
                         break;
                     }
                     case  "Artistas" : {
-                        Intent intent = new Intent(PrincipalActivity.this,artistasRecomendados.class);
+                        Intent intent = new Intent(artistasRecomendados.this,artistasRecomendados.class);
                         startActivity(intent);
                         break;
                     }
                     case  "Lista de Reproducción" : {
-                        Toast.makeText(PrincipalActivity.this,"Lista de Reproducción",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(artistasRecomendados.this,"Lista de Reproducción",Toast.LENGTH_SHORT).show();
                         break;
                     }
 
                     case "Ver Cuenta" :{
-                        Toast.makeText(PrincipalActivity.this,"Ver Cuenta",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(artistasRecomendados.this,"Ver Cuenta",Toast.LENGTH_SHORT).show();
                         break;
                     }
                     case "Cerrar Sesión" : {
-                        Toast.makeText(PrincipalActivity.this,"Cerraste Sesión",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(artistasRecomendados.this,"Cerraste Sesión",Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
@@ -99,7 +90,6 @@ public class PrincipalActivity extends AppCompatActivity {
                 return true;
             }
         });
-
     }
 
     @Override
@@ -111,5 +101,4 @@ public class PrincipalActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-
 }
