@@ -229,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(() -> {
                         CustomListAdapter adapter = new CustomListAdapter(this, results);
                         listViewItems.setAdapter(adapter);
+                        Log.d("200","oK");
                     });
                 } else {
                     Log.d("iTunes", "Service error");

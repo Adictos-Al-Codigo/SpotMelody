@@ -38,13 +38,13 @@ public class AppleMusicService {
                 Gson gson = gsonBuilder.create();
                 root = gson.fromJson(text, Root.class);
                 root.toString();
-                Log.d("Demostracion", "ok");
+                Log.d("MSG", "ok");
                 statusCode = resp.getStatusCode();
 
 
 
             }else {
-                Log.d("Demostracion", "ERROR NO ES NULL");
+                Log.d("MSG", "ERROR NO ES NULL");
             }
             if(delegate !=  null){
                 delegate.onChange(error != null, statusCode,root);

@@ -1,11 +1,16 @@
 package com.jahircelorio.spotmelody;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,6 +18,11 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.jahircelorio.spotmelody.Service.model.Data;
+import com.jahircelorio.spotmelody.Service.model.DreezerMusicService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PrincipalActivity extends AppCompatActivity {
 
@@ -22,6 +32,16 @@ public class PrincipalActivity extends AppCompatActivity {
     NavigationView navigationView;
 
     ActionBarDrawerToggle actionBarDrawerToggle;
+
+    DreezerMusicService service = null;
+
+    ListView listView = null;
+
+    private List<Data> data = null;
+
+    private TextView txtname;
+
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
@@ -33,6 +53,8 @@ public class PrincipalActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +76,13 @@ public class PrincipalActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
+
+
+        service = new DreezerMusicService();
+
+        // Traer los generos
+
+        this.getAllGenre();
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -110,6 +139,28 @@ public class PrincipalActivity extends AppCompatActivity {
         else{
             super.onBackPressed();
         }
+    }
+
+    // Obtener todos los generos de música
+
+    public void getAllGenre(){
+        data = new ArrayList<>();
+
+        service.getAllGenres((isNetworkError, statusCode, post) -> {
+            if (!isNetworkError){
+                if (statusCode==200){
+                    data.addAll(post.getData());
+                    runOnUiThread(()->{
+                        CustomListAdapter2 customListAdapter2 = new CustomListAdapter2(this,data);
+                        listView.setAdapter(customListAdapter2);
+                    });
+                }else{
+                    Log.d("iTunes", "Service error");
+                }
+            }else{
+                Log.d("Super Hero", "Network error");
+            }
+        });
     }
 
 }

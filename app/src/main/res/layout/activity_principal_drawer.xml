@@ -43,6 +43,7 @@
             android:textSize="20dp"
             android:translationY="10dp"
             android:translationX="10dp"
+            android:textStyle="bold"
             />
 
         <TextView
@@ -56,6 +57,201 @@
             android:textStyle="bold"
             android:textColor="#000"
             />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_marginLeft="150dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Musica Electrónica"
+                            android:textStyle="bold"
+                            android:textColor="#5539D5"
+                            />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="100dp"
+                            android:layout_marginLeft="-110dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/electronica"
+                            />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rap"
+                            android:layout_marginLeft="195dp"
+                            android:textStyle="bold"
+                            android:textColor="#1A2163"/>
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="100dp"
+                            android:layout_marginLeft="-110dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/rap"
+
+                            />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hip Hop"
+                            android:textStyle="bold"
+                            android:textColor="#0054FF"
+                            android:layout_marginLeft="185dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="100dp"
+                            android:layout_marginLeft="-110dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/hip_hop"
+                            />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rock"
+                            android:textStyle="bold"
+                            android:textColor="#2D43CF"
+                            android:layout_marginLeft="195dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="100dp"
+                            android:layout_marginLeft="-110dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/rock"
+                            />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pop"
+                            android:textStyle="bold"
+                            android:textColor="#0066FF"
+                            android:layout_marginLeft="195dp"/>
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="100dp"
+                            android:layout_marginLeft="-110dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/pop"
+                            />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reggaeton"
+                            android:textStyle="bold"
+                            android:textColor="#0149DC"
+                            android:layout_marginLeft="180dp"
+                            />
+                        <ImageView
+                            android:id="@+id/imageView14"
+                            android:layout_width="100dp"
+                            android:layout_marginLeft="-110dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/reggaeton"
+                            />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bachata"
+                            android:layout_marginLeft="185dp"
+                            android:textStyle="bold"
+                            android:textColor="#000CFF"
+                            />
+
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="100dp"
+                            android:layout_marginLeft="-110dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/bachata"
+                            />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!--
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <ListView
+                android:id="@+id/listViewItems2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.core.widget.NestedScrollView> -->
 
 
 
