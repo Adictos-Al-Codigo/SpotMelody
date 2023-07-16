@@ -110,7 +110,8 @@ public class PrincipalActivity extends AppCompatActivity {
                         break;
                     }
                     case  "Lista de Reproducción" : {
-                        Toast.makeText(PrincipalActivity.this,"Lista de Reproducción",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(PrincipalActivity.this,listaReproduccion.class);
+                        startActivity(intent);
                         break;
                     }
 

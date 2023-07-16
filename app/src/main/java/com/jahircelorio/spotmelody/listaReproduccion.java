@@ -3,6 +3,8 @@ package com.jahircelorio.spotmelody;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
@@ -58,6 +60,30 @@ public class listaReproduccion extends AppCompatActivity {
                     case  "Principal" : {
                         Intent intent = new Intent(listaReproduccion.this,PrincipalActivity.class);
                         startActivity(intent);
+                        break;
+                    }
+                    case  "Buscar" : {
+                        Intent intent = new Intent(listaReproduccion.this,MainActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case  "Artistas" : {
+                        Intent intent = new Intent(listaReproduccion.this,artistasRecomendados.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case  "Lista de Reproducción" : {
+                        Intent intent = new Intent(listaReproduccion.this,listaReproduccion.class);
+                        startActivity(intent);
+                        break;
+                    }
+
+                    case "Ver Cuenta" :{
+                        Toast.makeText(listaReproduccion.this,"Ver Cuenta",Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    case "Cerrar Sesión" : {
+                        Toast.makeText(listaReproduccion.this,"Cerraste Sesión",Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
