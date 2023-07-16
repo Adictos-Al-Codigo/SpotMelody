@@ -129,7 +129,8 @@ public class artistasRecomendados extends AppCompatActivity {
                         break;
                     }
                     case  "Lista de Reproducción" : {
-                        Toast.makeText(artistasRecomendados.this,"Lista de Reproducción",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(artistasRecomendados.this,listaReproduccion.class);
+                        startActivity(intent);
                         break;
                     }
 

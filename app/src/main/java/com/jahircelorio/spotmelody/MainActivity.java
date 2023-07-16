@@ -131,7 +131,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case  "Lista de Reproducción" : {
-                        Toast.makeText(MainActivity.this,"Lista de Reproducción",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this,listaReproduccion.class);
+                        startActivity(intent);
                         break;
                     }
 

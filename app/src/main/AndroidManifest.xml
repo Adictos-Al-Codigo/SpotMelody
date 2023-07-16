@@ -39,6 +39,12 @@
             android:theme="@style/Theme.ITunesAPI">
         </activity>
 
+        <activity
+            android:name=".listaReproduccion"
+            android:exported="true"
+            android:theme="@style/Theme.ITunesAPI">
+        </activity>
+
     </application>
 
 </manifest>
