@@ -223,6 +223,421 @@
                 </LinearLayout>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4"
+                        android:textSize="50dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/vagabundo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Vagabundo"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#ED8124"
+                        >
+
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sebástian Yatra"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="-70dp"
+                        android:textStyle="bold"
+                        android:textColor="#877171"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/playnegro" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5"
+                        android:textSize="50dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ojitoslindos" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ojitos Lindos"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#ED8124"
+                        >
+
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bad Bunny"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="-70dp"
+                        android:textStyle="bold"
+                        android:textColor="#877171"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/playnegro" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6"
+                        android:textSize="50dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="-7dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/acrostico" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Coco Loco"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#ED8124"
+                        >
+
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Maluma"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="-70dp"
+                        android:textStyle="bold"
+                        android:textColor="#877171"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/playnegro" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7"
+                        android:textSize="50dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/cocoloco" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Acróstico"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#ED8124"
+                        >
+
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Shakira"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="-70dp"
+                        android:textStyle="bold"
+                        android:textColor="#877171"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/playnegro" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8"
+                        android:textSize="50dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/mojabi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mojabi Ghost"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#ED8124"
+                        >
+
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bad Bunny ft Tani"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="-70dp"
+                        android:textStyle="bold"
+                        android:textColor="#877171"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/playnegro" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9"
+                        android:textSize="50dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/despecha" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Despechá"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#ED8124"
+                        >
+
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Rosalía"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="-70dp"
+                        android:textStyle="bold"
+                        android:textColor="#877171"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/playnegro" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10"
+                        android:textSize="50dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/dejalovisto" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Dejalo en Visto"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#ED8124"
+                        >
+
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Piso 21"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="-70dp"
+                        android:textStyle="bold"
+                        android:textColor="#877171"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/playnegro" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </ScrollView>

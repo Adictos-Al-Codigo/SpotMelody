@@ -20,7 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class listaReproduccion extends AppCompatActivity {
 
-    ImageView imageView1, imageView2, imageView3;
+    ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6,imageView7,imageView8,imageView9,imageView10;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -61,6 +61,13 @@ public class listaReproduccion extends AppCompatActivity {
         imageView1 = findViewById(R.id.imageView1);
         imageView2 = findViewById(R.id.imageView2);
         imageView3 = findViewById(R.id.imageView3);
+        imageView4 = findViewById(R.id.imageView4);
+        imageView5 = findViewById(R.id.imageView5);
+        imageView6 = findViewById(R.id.imageView6);
+        imageView7 = findViewById(R.id.imageView7);
+        imageView8 = findViewById(R.id.imageView8);
+        imageView9 = findViewById(R.id.imageView9);
+        imageView10 = findViewById(R.id.imageView10);
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -73,6 +80,13 @@ public class listaReproduccion extends AppCompatActivity {
         imageView1.setOnClickListener(onClickListener);
         imageView2.setOnClickListener(onClickListener);
         imageView3.setOnClickListener(onClickListener);
+        imageView4.setOnClickListener(onClickListener);
+        imageView5.setOnClickListener(onClickListener);
+        imageView6.setOnClickListener(onClickListener);
+        imageView7.setOnClickListener(onClickListener);
+        imageView8.setOnClickListener(onClickListener);
+        imageView9.setOnClickListener(onClickListener);
+        imageView10.setOnClickListener(onClickListener);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -125,6 +139,28 @@ public class listaReproduccion extends AppCompatActivity {
                 break;
             case R.id.imageView3:
                 CancionId = R.raw.docientosnoventauno;
+                break;
+            case R.id.imageView4:
+                CancionId = R.raw.vagabundo;
+                break;
+            case R.id.imageView5:
+                    CancionId = R.raw.ojitoslindos;
+                            break;
+            case R.id.imageView6:
+                CancionId = R.raw.cocoloco;
+            break;
+            case  R.id.imageView7:
+                CancionId = R.raw.acrostico;
+                break;
+            case R.id.imageView8:
+                CancionId = R.raw.mojabighost;
+                break;
+            case R.id.imageView9:
+                    CancionId = R.raw.despecha;
+                    break;
+            case R.id.imageView10:
+                    CancionId = R.raw.dejaloenvisto;
+                    break;
         }
 
         if (lastClickedButton != null && lastClickedButton != view && mediaPlayer != null && mediaPlayer.isPlaying()) {
