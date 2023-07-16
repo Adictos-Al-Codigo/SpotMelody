@@ -20,7 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class listaReproduccion extends AppCompatActivity {
 
-    ImageView imageView1, imageView2;
+    ImageView imageView1, imageView2, imageView3;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -60,6 +60,7 @@ public class listaReproduccion extends AppCompatActivity {
 
         imageView1 = findViewById(R.id.imageView1);
         imageView2 = findViewById(R.id.imageView2);
+        imageView3 = findViewById(R.id.imageView3);
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -71,6 +72,7 @@ public class listaReproduccion extends AppCompatActivity {
 
         imageView1.setOnClickListener(onClickListener);
         imageView2.setOnClickListener(onClickListener);
+        imageView3.setOnClickListener(onClickListener);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -121,6 +123,8 @@ public class listaReproduccion extends AppCompatActivity {
             case R.id.imageView2:
                 CancionId = R.raw.copavacia;
                 break;
+            case R.id.imageView3:
+                CancionId = R.raw.docientosnoventauno;
         }
 
         if (lastClickedButton != null && lastClickedButton != view && mediaPlayer != null && mediaPlayer.isPlaying()) {
