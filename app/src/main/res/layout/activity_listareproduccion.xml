@@ -83,6 +83,8 @@
                         android:text="Myke Towers"
                         android:layout_marginTop="25dp"
                         android:layout_marginLeft="-35dp"
+                        android:textStyle="bold"
+                        android:textColor="#877171"
                         />
 
                     <ImageView
@@ -143,6 +145,8 @@
                         android:text="Shakira, Manuel Turizo"
                         android:layout_marginTop="25dp"
                         android:layout_marginLeft="-70dp"
+                        android:textStyle="bold"
+                        android:textColor="#877171"
                         />
 
                     <ImageView
