@@ -3,6 +3,7 @@ package com.jahircelorio.spotmelody;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -12,9 +13,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 
 public class artistasRecomendados extends AppCompatActivity {
+
+    ImageView imageView, imageView2,imageView3,imageView4,imageView5,imageView6,
+            imageView7, imageView8, imageView9, imageView10, imageView11, imageView12,imageView13,imageView14,imageView15
+            ;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -50,6 +56,57 @@ public class artistasRecomendados extends AppCompatActivity {
         actionBarDrawerToggle = new ActionBarDrawerToggle(artistasRecomendados.this, drawerLayout, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+
+        imageView = findViewById(R.id.imageView);
+        imageView2 = findViewById(R.id.imageView2);
+        imageView3 = findViewById(R.id.imageView3);
+        imageView4 = findViewById(R.id.imageView4);
+        imageView5 = findViewById(R.id.imageView5);
+        imageView6 = findViewById(R.id.imageView6);
+        imageView7 = findViewById(R.id.imageView7);
+        imageView8 = findViewById(R.id.imageView8);
+        imageView9 = findViewById(R.id.imageView9);
+        imageView10 = findViewById(R.id.imageView10);
+        imageView11 = findViewById(R.id.imageView11);
+        imageView12 = findViewById(R.id.imageView12);
+        imageView13 = findViewById(R.id.imageView13);
+        imageView14 = findViewById(R.id.imageView14);
+        imageView15 = findViewById(R.id.imageView15);
+
+        int url_img [] =
+                {
+                R.drawable.myketowers,
+                R.drawable.olivia_rodrigo,
+                R.drawable.taylorswift,
+                        R.drawable.pespluma,
+                        R.drawable.badbunny,
+                        R.drawable.yng,
+                        R.drawable.grupofrontera,
+                        R.drawable.mileycyrus,
+                        R.drawable.dave,
+                        R.drawable.harrystyles,
+                        R.drawable.davidkushner,
+                        R.drawable.quevedo,
+                        R.drawable.feid,
+                        R.drawable.fuerzaregida,
+                        R.drawable.karolg
+                };
+
+        Glide.with(this).load(url_img[0]).into(imageView);
+        Glide.with(this).load(url_img[1]).into(imageView2);
+        Glide.with(this).load(url_img[2]).into(imageView3);
+        Glide.with(this).load(url_img[3]).into(imageView4);
+        Glide.with(this).load(url_img[4]).into(imageView5);
+        Glide.with(this).load(url_img[5]).into(imageView6);
+        Glide.with(this).load(url_img[6]).into(imageView7);
+        Glide.with(this).load(url_img[7]).into(imageView8);
+        Glide.with(this).load(url_img[8]).into(imageView9);
+        Glide.with(this).load(url_img[9]).into(imageView10);
+        Glide.with(this).load(url_img[10]).into(imageView11);
+        Glide.with(this).load(url_img[11]).into(imageView12);
+        Glide.with(this).load(url_img[12]).into(imageView13);
+        Glide.with(this).load(url_img[13]).into(imageView14);
+        Glide.with(this).load(url_img[14]).into(imageView15);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
